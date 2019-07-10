@@ -1,4 +1,6 @@
 pipeline {
+    agent any
+    stages{
     def myvar = 1234
     stage('scm'){
 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/MarinaBoboshko/testapp.git/']]])
@@ -20,4 +22,5 @@ checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleC
         sh 'echo "Tests passed"'
         }
     }
+}
 }
