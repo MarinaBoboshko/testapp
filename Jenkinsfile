@@ -1,7 +1,6 @@
-#!/usr/bin/env groovy
-pipeline {
+node {
     agent any
-    stages{
+  #  stages{
         stage('scm'){
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/MarinaBoboshko/testapp.git/']]])
         }
@@ -21,6 +20,6 @@ pipeline {
                 app.inside {
                 sh 'echo "Tests passed"'
          }
-    }
+   # }
 }
 }
