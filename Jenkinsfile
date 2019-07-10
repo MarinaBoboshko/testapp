@@ -15,8 +15,8 @@ node {
          stage('Test image') {
          dir('app'){
                 sh """docker run -d myname 
-           
                 ls
+                docker ps -a
                 """
 }
                 
