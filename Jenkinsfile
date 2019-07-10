@@ -14,15 +14,13 @@ node {
     }
          stage('Test image') {
          dir('app'){
-                sh 'docker run myname'
-
+                sh """docker run myname 
+                docker cp $CONTAINER_ID:/app/text.txt /var/lib/jenkins/workspace/testapp/app/text.txt
+                        """
 }
                 
          }
-        stage('Share data'){
-             dir ('/var/lib/jenkins/workspace/testapp/app'){
-             sh 'ls .'
-             }
+
                   }
 
 
