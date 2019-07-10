@@ -20,10 +20,7 @@ node {
                 
          }
         stage('Get data') {
-         dir('app'){
-                sh 'ls -la .'
                 sh 'cat text.txt'
-}
 }
 
 
