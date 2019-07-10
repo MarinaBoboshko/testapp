@@ -15,9 +15,13 @@ node {
          stage('Test image') {
          dir('app'){
                 sh 'docker run myname'
-                 sh 'docker ps -a'
+                sh 'docker ps -a'
 }
                 
          }
+        stage('Get data') {
+         dir('app'){
+                sh 'cat text.txt'
+}
 }
 
