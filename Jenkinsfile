@@ -20,10 +20,10 @@ node {
                 
          }
         stage('Share data'){
-        dir (var/lib/jenkins/workspace/testapp/app')
+             dir (/var/lib/jenkins/workspace/testapp/app'){
              sh 'ls .'
              }
-
+                  }
 
 
 
