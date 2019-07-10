@@ -14,7 +14,7 @@ node {
     }
          stage('Test image') {
          dir('app'){
-                sh 'docker run myname -d'
+                sh 'docker run myname'
                 sh 'cat text.txt'
 }
                 
