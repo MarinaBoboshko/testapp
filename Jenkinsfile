@@ -16,7 +16,7 @@ node {
          dir('app'){
                 sh """docker run -d myname 
                 ls
-                docker ps -a
+                docker ps
                 """
 }
                 
