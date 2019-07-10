@@ -13,10 +13,10 @@ node {
 
     }
          stage('Test image') {
-                docker.inside {
-                sh 'echo "Tests passed"'
-                sh 'pwd'
-                sh 'cat text.txt'
+         dir('app'){
+                sh 'docker run myname'
+                 sh 'docker ps -a'
+}
                 
          }
 }
