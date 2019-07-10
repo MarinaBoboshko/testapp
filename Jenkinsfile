@@ -14,14 +14,11 @@ node {
     }
          stage('Test image') {
          dir('app'){
-                sh 'docker run myname'
-                sh 'docker ps -a'
+                sh 'docker run -ti myname bash'
+                sh 'cat text.txt'
 }
                 
          }
-        stage('Get data') {
-                sh 'cat text.txt'
-}
 
 
 
