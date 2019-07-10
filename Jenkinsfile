@@ -15,7 +15,8 @@ node {
          stage('Test image') {
          dir('app'){
                 sh """docker run myname 
-                docker cp $CONTAINER_ID:/app/text.txt /var/lib/jenkins/workspace/testapp/app/text.txt
+            //    docker cp $CONTAINER_ID:/app/text.txt /var/lib/jenkins/workspace/testapp/app/text.txt
+                ls
                         """
 }
                 
