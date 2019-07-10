@@ -3,8 +3,6 @@ node {
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/MarinaBoboshko/testapp.git/']]])
         }
         stage('Build image') {
-                sh "echo '${myvar}'"
-                sh 'echo "${myvar}"'
                 sh """
                 ls -la .
                 pwd
