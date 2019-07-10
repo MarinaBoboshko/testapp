@@ -5,4 +5,5 @@ RUN chmod +x /test/app.py
 RUN python /test/app.py \
 && touch text.txt
 EXPOSE 3333
+VOLUME text.txt:text.txt
 CMD python app.py
