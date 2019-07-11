@@ -25,7 +25,7 @@ node {
 }
          dir('sorter'){
                 sh """
-                docker run -d sorter
+                docker run -td sorter
                 docker exec -t 54ddd0c95796a9886843547440d5b2e37a02fb3825c09dbb1066e8852afcae6f Data.txt < text.txt
                 docker ps
                 pwd
