@@ -28,7 +28,7 @@ node {
                 sh """docker run -d sorter 
                 docker ps
                 """
-}
+         }}
          stage('Get data') {
                  dir ('app'){
                  }
