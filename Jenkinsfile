@@ -8,7 +8,7 @@ node {
                 """
         dir('app'){
                 def app = docker.build("myname")
-                    id = $(docker images -f "dangling=true" -q)
+                  
         }
         dir('sorter'){
                 def sorter = docker.build("sorter")
@@ -22,8 +22,8 @@ node {
                 docker exec -t friendly_elion "ls"
                 docker exec -t friendly_elion "pwd"
                 pwd
-                docker exec -t friendly_elion cp friendly_elion:/test/text.txt .
-              
+                docker inspect friendly_elion
+                docker images -f "dangling=true" -q)
                 print id
                 ls
                 """
