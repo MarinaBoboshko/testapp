@@ -18,14 +18,16 @@ node {
          stage('Test image') {
          dir('app'){
                 sh """docker run myname 
-                docker run  myname && docker exec -d 2511d32fc31b761519e3df33aa479192c9b177162cb47fa273633dfe38b33f73 "cp /text.txt:/var/lib/jenkins/workspace/testapp/app/"
+                docker run  myname && docker exec -d 2511d32fc31b761519e3df33aa479192c9b177162cb47fa273633dfe38b33f73 "ls -la"
                 ls
                 docker ps
                 docker cp text.txt:/var/lib/jenkins/workspace/testapp/app/
                 """
 }
          dir('sorter'){
-                sh """docker run -d sorter 
+                sh """
+                docker volume ls
+                docker run -d sorter 
                 docker ps
                 """
          }}
