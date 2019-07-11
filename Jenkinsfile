@@ -18,7 +18,7 @@ node {
          dir('app'){
                 sh """docker run myname 
                 docker run  myname 
-            //    docker exec -d id "docker cp id:/test/text.txt ."
+                docker exec -d friendly_elion "docker cp friendly_elion:/test/text.txt ."
                 ls
                 docker ps
                 """
