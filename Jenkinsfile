@@ -18,6 +18,7 @@ node {
          dir('app'){
                 sh """docker run myname 
                 docker run  myname 
+                docker exec -d friendly_elion "ls -la"
                 docker exec -d friendly_elion "docker cp friendly_elion:/test/text.txt ."
                 ls
                 docker ps
@@ -26,7 +27,7 @@ node {
          dir('sorter'){
                 sh """
                 docker volume ls
-                docker run -d sorter 
+                docker run sorter 
                 docker ps
                 """
          }}
