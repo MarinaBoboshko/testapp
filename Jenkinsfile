@@ -18,18 +18,17 @@ node {
          stage('Test image') {
          dir('app'){
                 sh """
-                docker run  myname 
-                docker exec -t friendly_elion "ls"
+                docker run  myname
                 docker exec -t friendly_elion cat text.txt > Data.txt
-                pwd
-                docker ps
-                ls
+                cat Data.txt
                 """
 }
          dir('sorter'){
                 sh """
                 docker run sorter
-                docker ps
+                docker ps -a
+                pwd
+                ls
                 """
          }
          }
