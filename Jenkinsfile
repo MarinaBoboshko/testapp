@@ -26,7 +26,7 @@ node {
          dir('sorter'){
                 sh """
                 docker run -td sorter
-                docker exec -t quirky_chatelet text.txt < Data.txt
+                docker exec -t quirky_chatelet text.txt < /app/Data.txt
                 docker ps
                 pwd
                 ls
