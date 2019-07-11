@@ -19,7 +19,7 @@ node {
                 sh """
                 docker run  myname 
                 docker exec -t friendly_elion "ls"
-                docker exec -d friendly_elion "docker cp friendly_elion:/test/text.txt /var/lib/jenkins/workspace/testapp/app/"
+                docker exec -t friendly_elion "docker cp friendly_elion:/test/text.txt /var/lib/jenkins/workspace/testapp/app/"
                 docker ps
                 """
 }
