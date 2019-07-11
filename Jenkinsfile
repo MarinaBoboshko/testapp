@@ -28,7 +28,7 @@ node {
                 sh """
                 docker run -td sorter
                 ls
-                docker exec -t quirky_chatelet text.txt < /app/Data.txt
+                docker exec -t quirky_chatelet text.txt < /var/lib/jenkins/workspace/testapp/app/Data.txt
                 docker ps
                 pwd
                 ls
