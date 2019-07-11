@@ -21,8 +21,8 @@ node {
                 docker exec -t friendly_elion "ls"
                 docker exec -t friendly_elion "pwd"
                 pwd
-                docker exec -t friendly_elion cat text.txt
-                docker inspect friendly_elion
+                docker exec -t friendly_elion docker cp friendly_elion:/test/text.txt .
+                
                 docker ps
                 """
 }
