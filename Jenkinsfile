@@ -25,10 +25,12 @@ node {
 }
          dir('sorter'){
                 sh """
-                docker run -t sorter
+                docker run -d sorter
+                docker exec -t sorter Data.txt < text.txt
                 docker ps
                 pwd
                 ls
+                cat text.txt
                 """
          }
          }
