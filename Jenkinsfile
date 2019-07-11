@@ -22,8 +22,7 @@ node {
                 docker exec -t friendly_elion "ls"
                 docker exec -t friendly_elion cat text.txt > Data.txt
                 pwd
-                docker images -f "dangling=true" -q
-                print id
+            
                 ls
                 """
 }
