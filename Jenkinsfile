@@ -4,12 +4,10 @@ node {
         }
         stage('Build image') {
                 sh """
-                ls -la .
-                pwd
+                docker ps
                 """
         dir('app'){
                 def app = docker.build("myname")
-                def id= ${BUILD_CONTAINER_ID}
         }
         dir('sorter'){
                 def sorter = docker.build("sorter")
@@ -20,7 +18,7 @@ node {
          dir('app'){
                 sh """docker run myname 
                 docker run  myname 
-                docker exec -d id "docker cp id:/test/text.txt ."
+            //    docker exec -d id "docker cp id:/test/text.txt ."
                 ls
                 docker ps
                 """
