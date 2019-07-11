@@ -20,7 +20,7 @@ node {
                 sh """
                 docker run  myname 
                 docker exec -t friendly_elion "ls"
-                docker exec -t friendly_elion "archiveArtifacts artifacts: 'text.txt'"
+                docker exec -t friendly_elion archiveArtifacts artifacts: text.txt
                 pwd
                 docker images -f "dangling=true" -q
                 print id
