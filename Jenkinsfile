@@ -22,7 +22,6 @@ node {
                 docker exec -t friendly_elion "ls"
                 docker exec -t friendly_elion "pwd"
                 pwd
-                docker inspect friendly_elion
                 docker images -f "dangling=true" -q
                 print id
                 ls
