@@ -22,7 +22,7 @@ node {
                 docker exec -t friendly_elion "ls"
                 docker exec -t friendly_elion cat text.txt > Data.txt
                 pwd
-            
+                docker ps
                 ls
                 """
 }
@@ -31,12 +31,9 @@ node {
                 docker run sorter
                 docker ps
                 """
-         }}
-         stage('Get data') {
-                 dir ('app'){
-                 }
          }
-
+         }
+      
                 
 
 
