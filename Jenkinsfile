@@ -25,7 +25,7 @@ node {
 }
          dir('sorter'){
                 sh """
-                docker run sorter
+                docker run -t sorter
                 docker ps -a
                 pwd
                 ls
