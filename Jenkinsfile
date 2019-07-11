@@ -21,9 +21,8 @@ node {
                 docker exec -t friendly_elion "ls"
                 docker exec -t friendly_elion "pwd"
                 pwd
-                docker exec -t friendly_elion whereis text.txt
-                
-                docker ps
+                docker exec -t friendly_elion cat text.txt
+                ls
                 """
 }
          dir('sorter'){
