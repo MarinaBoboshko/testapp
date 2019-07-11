@@ -16,6 +16,7 @@ node {
          dir('app'){
                 sh """docker run myname && ls
                 docker run -t myname bash 
+                docker run -d myname tail -f /dev/null
                 ls
                 docker ps
                 """
