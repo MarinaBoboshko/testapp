@@ -16,18 +16,16 @@ node {
     }
          stage('Test image') {
          dir('app'){
-                sh """docker run myname 
+                sh """
                 docker run  myname 
-                docker exec -d friendly_elion "ls"
+                docker exec -t friendly_elion "ls"
                 docker exec -d friendly_elion "docker cp friendly_elion:/test/text.txt /var/lib/jenkins/workspace/testapp/app/"
-                ls
                 docker ps
                 """
 }
          dir('sorter'){
                 sh """
-                docker volume ls
-                docker run sorter 
+                docker run sorter
                 docker ps
                 """
          }}
