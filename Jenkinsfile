@@ -21,12 +21,13 @@ node {
                 docker run  myname
                 docker exec -t friendly_elion cat text.txt > Data.txt
                 cat Data.txt
+                ls
                 """
 }
          dir('sorter'){
                 sh """
                 docker run -td sorter
-                whereis Data.txt
+                ls
                 docker exec -t quirky_chatelet text.txt < /app/Data.txt
                 docker ps
                 pwd
