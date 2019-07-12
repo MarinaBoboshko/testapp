@@ -21,7 +21,8 @@ node {
                 echo d
                 sh """
                 docker run  myname
-                docker cp  friendly_elion:text.txt Data.txt
+                touch Data.txt
+                docker cp  friendly_elion:test/app/text.txt Data.txt
                 cat /var/lib/jenkins/workspace/testapp/app/Data.txt
                 ls
                 docker run -td sorter
