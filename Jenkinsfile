@@ -22,6 +22,7 @@ node {
                 sh """
                 docker run  myname
                 touch Data.txt
+                docker exec -t friendly_elion sh pwd && ls
                 docker cp  friendly_elion:test/app/text.txt Data.txt
                 cat /var/lib/jenkins/workspace/testapp/app/Data.txt
                 ls
