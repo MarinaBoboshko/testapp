@@ -17,7 +17,7 @@ node {
     }
          stage('Test image') {
          dir('app'){
-                def d = sh returnStdout: true, script: 'docker.build("myname")'
+                def d = sh returnStdout: true, script: 'docker run  myname'
                 echo d
                 sh """
                 docker run  myname
@@ -28,7 +28,7 @@ node {
                 docker exec -t quirky_chatelet cat text.txt
                 ls
                 pwd
-                docker exec -t quirky_chatelet sh -c 'cat > text.txt' < /var/lib/jenkins/workspace/testapp/app/Data.txt 
+        
                 """
 }
          }
