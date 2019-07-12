@@ -25,10 +25,11 @@ node {
                 docker run -td sorter
                 docker exec -t quirky_chatelet cat text.txt
                 ls
-                docker exec -t quirky_chatelet cat  /var/lib/jenkins/workspace/testapp/app/Data.txt > text.txt 
+                docker exec -t quirky_chatelet sh -c 'cat > text.txt' < /var/lib/jenkins/workspace/testapp/app/Data.txt 
                 docker ps
                 pwd
                 ls
+                sh -c ‘cat > /home/test.txt’ < /tmp/tmp.pGlwFknjlF/test.txt
                 """
 }
          }
