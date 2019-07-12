@@ -30,7 +30,10 @@ node {
                 cat /var/lib/jenkins/workspace/testapp/app/text.txt
 
                 """
-}
+                  sh returnStdout: true, script: 'pwd'
+         sh returnStdout: true, script: 'cat text.txt'
+         
+         }
          }
       
                 
