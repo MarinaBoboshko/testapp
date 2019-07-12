@@ -20,11 +20,11 @@ node {
                 sh """
                 docker run  myname
                 docker exec -t friendly_elion cat text.txt > Data.txt
-                cat Data.txt
+                cat /var/lib/jenkins/workspace/testapp/app/Data.txt
                 ls
                 docker run -td sorter
                 docker exec -t quirky_chatelet cat text.txt
-                docker exec -t quirky_chatelet text.txt < cat /var/lib/jenkins/workspace/testapp/app/Data.txt
+                docker exec -t quirky_chatelet cat text.txt < /var/lib/jenkins/workspace/testapp/app/Data.txt
                 docker ps
                 pwd
                 ls
