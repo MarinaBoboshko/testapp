@@ -28,7 +28,9 @@ node {
                 docker exec -t quirky_chatelet cat text.txt
                 ls
                 pwd
-        
+                docker.image('myname').inside(
+                " --volume ${env.WORKSPACE}/app/text.txt:/Data.txt "
+            ) 
                 """
 }
          }
