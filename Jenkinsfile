@@ -24,8 +24,6 @@ node {
                 docker exec -t friendly_elion cat text.txt > Data.txt
                 cat /var/lib/jenkins/workspace/testapp/app/Data.txt
                 ls
-          }
-          dir('sorter'){
                 docker run -td sorter
                 docker exec -t quirky_chatelet cat text.txt
                 ls
