@@ -17,19 +17,21 @@ node {
     }
          stage('Test image') {
          dir('app'){
-                def d = sh returnStdout: true, script: 'docker run  myname'
+                def d = sh returnStdout: true, script: 'docker run myname'
                 echo d
                 sh """
                 docker run  myname
                 docker exec -t friendly_elion cat text.txt > Data.txt
                 cat /var/lib/jenkins/workspace/testapp/app/Data.txt
                 ls
+          }
+          dir('sorter'){
                 docker run -td sorter
                 docker exec -t quirky_chatelet cat text.txt
                 ls
                 pwd
-                docker.image('myname').inside(
-                " --volume ${env.WORKSPACE}/app/text.txt:/Data.txt "
+                docker.image('sorter').inside(
+                " RUN ls "
             ) 
                 """
 }
