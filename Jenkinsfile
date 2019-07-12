@@ -22,12 +22,7 @@ node {
                 docker exec -t friendly_elion cat text.txt > Data.txt
                 cat Data.txt
                 ls
-                """
-}
-         dir('sorter'){
-                sh """
                 docker run -td sorter
-                ls
                 docker exec -t quirky_chatelet cat text.txt
                 docker exec -t quirky_chatelet text.txt < cat /var/lib/jenkins/workspace/testapp/app/Data.txt
                 docker ps
@@ -35,7 +30,7 @@ node {
                 ls
                 cat text.txt
                 """
-         }
+}
          }
       
                 
