@@ -23,9 +23,8 @@ node {
                 docker run  myname
                 touch Data.txt
                 docker ps
-                docker exec -t practical_greider sh "pwd && ls"
-                docker cp  practical_greider:test/app/text.txt Data.txt
-                cat /var/lib/jenkins/workspace/testapp/app/Data.txt
+                docker exec -t practical_greider cat text.txt
+                
                 ls
                 docker run -td sorter
                 ls
