@@ -28,8 +28,8 @@ node {
                 docker exec -t quirky_chatelet cat text.txt
                 ls
                 pwd
-                cat text.txt
-                cat Data.txt
+                cat /var/lib/jenkins/workspace/testapp/app/text.txt
+
                 """
 }
          }
