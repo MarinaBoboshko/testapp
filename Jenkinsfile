@@ -17,6 +17,8 @@ node {
     }
          stage('Test image') {
          dir('app'){
+                def d = sh returnStdout: true, script: 'date'
+                echo d
                 sh """
                 docker run  myname
                 docker exec -t friendly_elion cat text.txt > Data.txt
