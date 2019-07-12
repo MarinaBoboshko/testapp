@@ -17,7 +17,7 @@ node {
     }
          stage('Test image') {
          dir('app'){
-                def d = sh returnStdout: true, script: 'date'
+                def d = sh returnStdout: true, script: 'docker.build("myname")'
                 echo d
                 sh """
                 docker run  myname
