@@ -23,8 +23,8 @@ node {
                 docker run  myname
                 touch Data.txt
                 docker ps
-                docker exec -t friendly_elion sh "pwd && ls"
-                docker cp  friendly_elion:test/app/text.txt Data.txt
+                docker exec -t practical_greider sh "pwd && ls"
+                docker cp  practical_greider:test/app/text.txt Data.txt
                 cat /var/lib/jenkins/workspace/testapp/app/Data.txt
                 ls
                 docker run -td sorter
