@@ -30,9 +30,8 @@ node {
                 docker exec -t quirky_chatelet cat text.txt
                 ls
                 pwd
-                docker.image('sorter').inside(
-                " RUN ls "
-            ) 
+                cat text.txt
+                cat Data.txt
                 """
 }
          }
