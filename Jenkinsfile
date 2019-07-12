@@ -25,7 +25,6 @@ node {
                 cat /var/lib/jenkins/workspace/testapp/app/Data.txt
                 ls
                 docker run -td sorter
-                docker exec -t quirky_chatelet cat text.txt
                 ls
                 pwd
                 cat /var/lib/jenkins/workspace/testapp/app/text.txt
