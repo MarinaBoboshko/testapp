@@ -12,15 +12,12 @@ node {
     }
         stage ('Testing container'){
                 appcontainer.inside('-v /var/run/docker.sock:/var/run/docker.sock '){
-                        sh returnStdout: true, script: 'python app/app.py'    
+                        sh "python app/app.py"    
          }
                 appsorter.inside('-v /var/run/docker.sock:/var/run/docker.sock')   {  
-                        sh returnStdout: true, script: 'python sorter/app.py'
+                        sh "python sorter/app.py"
                                      
                  }   
-         stage ('Test Data'){
-              sh 'cat text.txt'
-         }
          
          }
 
