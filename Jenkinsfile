@@ -5,27 +5,21 @@ node {
         stage('Build image') {
         dir('app'){
                 appcontainer = docker.build("myname")
-
         }
         dir ('sorter'){
                 appsorter = docker.build("sorter")        
         }
-
     }
-         
         stage ('Testing container'){
                 appcontainer.inside('-v /var/run/docker.sock:/var/run/docker.sock '){
-                         sh """
-                         python app/app.py
-                         cat text.txt
-                         """
+                        sh returnStdout: true, script: 'python app/app.py'    
          }
                 appsorter.inside('-v /var/run/docker.sock:/var/run/docker.sock')   {  
                         sh returnStdout: true, script: 'python sorter/app.py'
                                      
                  }   
          stage ('Test Data'){
-              sh returnStdout: true, script: 'cat text.txt'
+              sh 'cat text.txt'
          }
          
          }
