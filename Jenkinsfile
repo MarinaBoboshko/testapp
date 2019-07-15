@@ -7,38 +7,33 @@ node {
                 docker ps
                 """
         dir('app'){
-                def app = docker.build("myname")
-                  
+                appcontainer = docker.build("myname")
+
         }
-        dir('sorter'){
-                def sorter = docker.build("sorter")
+        dir ('sorter'){
+                appsorter = docker.build("sorter")        
         }
 
     }
-         stage('Test image') {
-         dir('app'){
-                def d = sh returnStdout: true, script: 'docker run myname'
-                echo d
-                sh """
-                docker run  myname
-                touch Data.txt
-                docker ps
-                docker exec -t practical_greider cat text.txt
-                
-                ls
-                docker run -td sorter
-                ls
-                pwd
-                cat /var/lib/jenkins/workspace/testapp/app/text.txt
-
-                """
-                  sh returnStdout: true, script: 'pwd'
-         sh returnStdout: true, script: 'cat text.txt'
+         }
+         stage ('Testing container'){
+                appcontainer.inside('-v /var/run/docker.sock:/var/run/docker.sock '){
+                         sh """
+                         python app/app.py
+                         cat text.txt
+                         cp text.txt /var/lib/jenkins/workspace/app/textnew.txt
+                         """
+         }
+                 appsorter.inside('-v /var/run/docker.sock:/var/run/docker.sock')   {  
+                        sh "cp /var/lib/jenkins/workspace/app/textnew.txt text.txt"
+                        sh "python /sorter/app.py" 
+                 
+                 }   
+         stage ('Test Data'){
+          sh " cat textnew.txt"
+         }
          
          }
-         }
-      
-                
 
 
 }
