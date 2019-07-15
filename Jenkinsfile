@@ -29,7 +29,7 @@ node {
                         ls
                         pwd
   
-                        python /sorter/app.py
+                        python sorter/app.py
                         """
                  
                  }   
