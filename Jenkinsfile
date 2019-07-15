@@ -15,7 +15,7 @@ node {
         }
 
     }
-         }
+         
          stage ('Testing container'){
                 appcontainer.inside('-v /var/run/docker.sock:/var/run/docker.sock '){
                          sh """
@@ -34,6 +34,5 @@ node {
          }
          
          }
-
 
 }
