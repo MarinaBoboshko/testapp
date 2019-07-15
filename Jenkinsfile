@@ -21,15 +21,11 @@ node {
                          """
          }
                 appsorter.inside('-v /var/run/docker.sock:/var/run/docker.sock')   {  
-                        sh """ 
-                        ls
-                        pwd
-                        python sorter/app.py
-                        """
-                 
+                        sh returnStdout: true, script: 'python sorter/app.py'
+                                     
                  }   
          stage ('Test Data'){
-                sh " cat text.txt"
+              sh returnStdout: true, script: 'cat text.txt'
          }
          
          }
