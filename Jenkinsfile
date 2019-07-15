@@ -21,14 +21,14 @@ node {
                          sh """
                          python app/app.py
                          cat text.txt
-                         cp text.txt /var/lib/jenkins/workspace/app/textnew.txt
+                         cp text.txt /var/lib/jenkins/workspace/test/app/textnew.txt
                          """
          }
                  appsorter.inside('-v /var/run/docker.sock:/var/run/docker.sock')   {  
                         sh """ 
                         ls
                         pwd
-                        cp /var/lib/jenkins/workspace/app/textnew.txt text.txt
+                        cp /var/lib/jenkins/workspace/test/app/textnew.txt text.txt
                         python /sorter/app.py
                         """
                  
