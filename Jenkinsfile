@@ -11,10 +11,10 @@ node {
         }
     }
         stage ('Testing container'){
-                appcontainer.inside(-v "/var/lib/docker.sock:/var/lib/docker.sock"){
+                appcontainer.inside('-v /var/run/docker.sock:/var/run/docker.sock'){
                         sh "python app/app.py"    
          }
-                appsorter.inside(-v "/var/lib/docker.sock:/var/lib/docker.sock"){  
+                appsorter.inside('-v /var/run/docker.sock:/var/run/docker.sock'){  
                         sh "python sorter/app.py"
                                      
                  }   
